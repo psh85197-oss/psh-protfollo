@@ -1,0 +1,35 @@
+@use "../../styles/mixins" as *;
+
+.projects {
+  @include section;
+  padding-bottom: calc(var(--space-2xl) + 1.5rem);
+
+  &__inner {
+    @include container;
+  }
+
+  &__head {
+    margin-bottom: var(--space-xl);
+  }
+
+  &__count {
+    margin-top: var(--space-md);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+  }
+
+  &__list {
+    display: grid;
+    border-top: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    overflow: visible;
+    background: rgba(248, 251, 253, 0.28);
+  }
+}
+
+.projects .project-item:last-child {
+  border-bottom: 0;
+}

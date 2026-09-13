@@ -1,0 +1,60 @@
+@use "../../styles/mixins" as *;
+
+.skills {
+  @include section;
+  border-block: 1px solid var(--color-line);
+  background: linear-gradient(180deg, rgba(248, 251, 253, 0.35), transparent);
+
+  &__inner {
+    @include container;
+  }
+
+  &__head {
+    margin-bottom: var(--space-xl);
+  }
+
+  &__title.section-title {
+    font-size: 36px;
+    word-break: keep-all;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+  }
+
+  &__group {
+    padding-block: var(--space-md);
+    border-top: 2px solid var(--color-ink);
+
+    h3 {
+      margin-bottom: var(--space-sm);
+      font-size: 20px;
+      color: var(--color-sea);
+    }
+
+    ul {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    li {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--color-ink-soft);
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .skills__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .skills__list {
+    grid-template-columns: 1fr;
+  }
+}

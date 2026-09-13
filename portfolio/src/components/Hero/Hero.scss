@@ -1,0 +1,212 @@
+@use "../../styles/mixins" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: calc(100vh - var(--header-h));
+  display: grid;
+  align-items: end;
+  overflow-x: clip;
+  isolation: isolate;
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, transparent 35%, rgba(233, 238, 242, 0.92) 88%),
+      linear-gradient(120deg, #c9d7e0 0%, #a8c0cb 42%, #8fadb8 100%);
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(20, 33, 43, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 33, 43, 0.08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 65% at 60% 35%, #000 20%, transparent 75%);
+    animation: grid-drift 18s linear infinite;
+  }
+
+  &__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    will-change: transform;
+
+    &--a {
+      width: min(42vw, 420px);
+      height: min(42vw, 420px);
+      top: 8%;
+      right: 8%;
+      background: radial-gradient(circle, rgba(27, 127, 90, 0.45), transparent 68%);
+    }
+
+    &--b {
+      width: min(28vw, 280px);
+      height: min(28vw, 280px);
+      top: 38%;
+      left: 10%;
+      background: radial-gradient(circle, rgba(30, 77, 107, 0.38), transparent 70%);
+    }
+  }
+
+  &__content {
+    width: min(calc(100vw - 2.5rem), var(--container));
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    justify-self: center;
+    padding-block: clamp(4rem, 12vh, 7rem) var(--space-2xl);
+  }
+
+  &__role {
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-sea);
+  }
+
+  &__name {
+    margin-bottom: 0.55rem;
+    font-size: clamp(3.4rem, 12vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    color: var(--color-ink);
+  }
+
+  &__ai-note {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    padding: 0.35rem 0.7rem;
+    max-width: 100%;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-sea);
+    background: var(--color-sea-soft);
+    border: 1px solid rgba(30, 77, 107, 0.18);
+    border-radius: var(--radius);
+    word-break: keep-all;
+  }
+
+  &__lead {
+    display: grid;
+    gap: 0.55rem;
+    width: 100%;
+    min-width: 0;
+    max-width: min(44rem, 100%);
+    margin-bottom: var(--space-lg);
+    font-size: clamp(1.02rem, 2vw, 1.18rem);
+    line-height: 1.55;
+    color: var(--color-ink-soft);
+  }
+
+  &__lead-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.4rem;
+    row-gap: 0.2rem;
+    width: 100%;
+    min-width: 0;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+
+  &__lead-tech {
+    white-space: nowrap;
+  }
+
+  &__lead-sep {
+    color: var(--color-muted);
+
+    &--desktop {
+      @media (max-width: 719px) {
+        display: none;
+      }
+    }
+  }
+
+  &__lead-break {
+    flex-basis: 100%;
+    width: 100%;
+    height: 0;
+
+    @media (min-width: 720px) {
+      display: none;
+    }
+  }
+
+  &__lead-desc {
+    display: block;
+    word-break: keep-all;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.75rem 1.35rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition:
+      background 0.25s var(--ease-out),
+      color 0.25s var(--ease-out),
+      transform 0.25s var(--ease-out);
+
+    &--primary {
+      background: var(--color-ink);
+      color: #f7fafb;
+
+      &:hover {
+        background: var(--color-accent);
+        transform: translateY(-2px);
+      }
+    }
+
+    &--ghost {
+      border: 1px solid var(--color-line);
+      background: var(--color-surface);
+
+      &:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent-deep);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-64px, -32px, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__content {
+    width: min(calc(100vw - 1.5rem), var(--container));
+    padding-block: 3.5rem var(--space-xl);
+  }
+
+  .hero__lead {
+    font-size: 0.95rem;
+  }
+}

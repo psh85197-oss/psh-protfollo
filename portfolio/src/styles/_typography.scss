@@ -1,0 +1,41 @@
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+p {
+  color: var(--color-ink-soft);
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sea);
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  margin-bottom: var(--space-md);
+}
+
+.section-desc {
+  max-width: 36rem;
+  font-size: 1.05rem;
+}

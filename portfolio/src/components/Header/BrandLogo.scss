@@ -1,0 +1,118 @@
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+  color: var(--color-ink);
+  transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+
+  &:hover {
+    transform: translateY(-1px);
+
+    .brand-logo__mark {
+      color: var(--color-accent-deep);
+      background: var(--color-accent-soft);
+      border-color: rgba(27, 127, 90, 0.28);
+    }
+
+    .brand-logo__en {
+      color: var(--color-accent);
+    }
+  }
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 2.35rem;
+    height: 2.35rem;
+    color: var(--color-ink);
+    background: rgba(248, 251, 253, 0.9);
+    border: 1px solid var(--color-line);
+    border-radius: 0.65rem;
+    transition:
+      color 0.3s var(--ease-out),
+      background 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out),
+      box-shadow 0.3s var(--ease-out);
+    box-shadow: 0 6px 16px rgba(20, 33, 43, 0.06);
+
+    svg {
+      width: 1.35rem;
+      height: 1.35rem;
+      display: block;
+    }
+  }
+
+  &__text {
+    display: grid;
+    gap: 0.12rem;
+    min-width: 0;
+    line-height: 1;
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  &__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  &__en,
+  &__role {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  &__en {
+    color: var(--color-sea);
+    transition: color 0.3s var(--ease-out);
+  }
+
+  &__dot {
+    width: 0.22rem;
+    height: 0.22rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    gap: 0.55rem;
+
+    &__mark {
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 0.55rem;
+
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+
+    &__name {
+      font-size: 0.98rem;
+    }
+
+    &__role {
+      display: none;
+    }
+
+    &__dot {
+      display: none;
+    }
+  }
+}

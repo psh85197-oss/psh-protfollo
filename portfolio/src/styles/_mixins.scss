@@ -1,0 +1,21 @@
+@mixin container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+@mixin section {
+  padding-block: var(--space-2xl);
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@mixin hover-lift {
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

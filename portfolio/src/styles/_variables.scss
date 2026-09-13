@@ -1,0 +1,31 @@
+:root {
+  --color-bg: #e9eef2;
+  --color-bg-deep: #d7e0e7;
+  --color-surface: rgba(248, 251, 253, 0.78);
+  --color-ink: #14212b;
+  --color-ink-soft: #334653;
+  --color-muted: #61707a;
+  --color-line: rgba(20, 33, 43, 0.12);
+  --color-accent: #1b7f5a;
+  --color-accent-deep: #146347;
+  --color-accent-soft: rgba(27, 127, 90, 0.12);
+  --color-sea: #1e4d6b;
+  --color-sea-soft: rgba(30, 77, 107, 0.1);
+
+  --font-display: "Bricolage Grotesque", "Apple SD Gothic Neo", sans-serif;
+  --font-body: "Figtree", "Apple SD Gothic Neo", sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5.5rem;
+
+  --container: 1120px;
+  --radius: 4px;
+  --header-h: 72px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 18px 50px rgba(20, 33, 43, 0.08);
+}
